@@ -15,12 +15,12 @@ app.use(express.json());
 
 var profile_desc = [
     {
-    name: "test",
-    githubUsername: "test",
-    githubLink: "test",
-    githubProfileImage: "test",
-    personalSiteLink: "test",
-    currentCity: "test",
+    name: "Brandon Ford",
+    githubUsername: "dogtownoak",
+    githubLink: "https://github.com/dogtownoak/personal-api",
+    githubProfileImage: "https://github.com/dogtownoak",
+    personalSiteLink: "https://david.brandon.ford.com",
+    currentCity: "Oakland",
     hobbies: [
         {hobby: 'snowboarding', season: 'winter'}, 
         {hobby: 'fly fishing', season: 'summer'}, {hobby: 'biking', season: 'summer'}]

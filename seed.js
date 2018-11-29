@@ -1,18 +1,18 @@
 var db = require('./models');
 
-var profile_descSeed = [
-    {
-    name: String,
-    githubUsername: String,
-    githubLink: String,
-    githubProfileImage: String,
-    personalSiteLink: String,
-    currentCity: String,
-    hobbies: [
-        {hobby: 'snowboarding', season: 'winter'}, 
-        {hobby: 'fly fishing', season: 'summer'}, {hobby: 'biking', season: 'summer'}]
-    }
-];
+// var profile_descSeed = [
+//     {
+//     name: String,
+//     githubUsername: String,
+//     githubLink: String,
+//     githubProfileImage: String,
+//     personalSiteLink: String,
+//     currentCity: String,
+//     hobbies: [
+//         {hobby: 'snowboarding', season: 'winter'}, 
+//         {hobby: 'fly fishing', season: 'summer'}, {hobby: 'biking', season: 'summer'}]
+//     }
+// ];
 
 var art_list = [
     {
