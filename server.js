@@ -9,7 +9,10 @@ app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+var cors = require('cors')
+
 app.use(express.json());
+app.use(cors());
 
 // Profile: Hard Coded //
 
@@ -19,7 +22,7 @@ var profile_desc = [
     githubUsername: "dogtownoak",
     githubLink: "https://github.com/dogtownoak/personal-api",
     githubProfileImage: "https://github.com/dogtownoak",
-    personalSiteLink: "https://david.brandon.ford.com",
+    personalSiteLink: "https://davidbrandonford.com",
     currentCity: "Oakland",
     hobbies: [
         {hobby: 'snowboarding', season: 'winter'}, 
@@ -27,24 +30,22 @@ var profile_desc = [
     }
 ];
 
-
-
 ////////////////////
 //  ROUTES
 ///////////////////
 
-// // define a root route: localhost:3000/
+///// define a root route: localhost:3000/
 app.get('/', function (req, res) {
     res.sendFile('views/index.html' , { root : __dirname}); 
 });
 
-//////
+////// PROFILE ENDPOINT //////////////////
 
 app.get('/api/profile', function(req, res) {
     res.json(profile_desc);
 });
 
-
+///// INDEX ENDPOINT /////////////////////
 
 app.get('/api/art', function(req, res) {
     db.Art.find({})
@@ -54,7 +55,18 @@ app.get('/api/art', function(req, res) {
     });
 });
 
-//////// ADD NEW ART ////////////////////////
+////// SHOW ENDPOINT ////////////////////
+
+app.get('/api/art/:id', (req,res) => {
+    var id = req.params.id;
+    db.Art.findById(id, (err, art) => {
+        if(err) return console.log(err);
+        res.json(art);
+    })
+});
+
+//////// CREATE ENDPOINT  //////////////
+
 app.post('/api/art', (req, res) => {
     console.log('art create', req.body);
     var newArt = req.body;
@@ -64,9 +76,26 @@ app.post('/api/art', (req, res) => {
     })
 });
 
+/////// UPDATE ENDPOIND /////////////////
 
+app.put('/api/art/:id', (req,res) => {
+    var id = req.params.id;
+    var art = req.body;
+    db.Art.findByIdAndUpdate({_id: id}, art, (err, updatedArt) => {
+        if(err) return console.log(err);
+        res.json(updatedArt);
+    })
+});
 
+/////// DELETE ENDPOINT //////////////////
 
+app.delete('/api/art/:id', (req,res) => {
+    var id = req.params.id;
+    db.Art.findByIdAndDelete(id, (err, deletedArt) => {
+        if(err) return console.log(err);
+        res.json(deletedArt);
+    })
+});
 
 
 

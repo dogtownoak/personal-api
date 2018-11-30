@@ -2,4 +2,60 @@ console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
     console.log("jQuery up");
-})
+});
+
+var url = "http://localhost:3000/api/art"
+
+
+$.ajax({
+    method: 'GET',
+    url: `${url}`,
+    data: {
+    },
+    success: function( response ) {
+        console.log( response );
+        console.log( response[2].img );
+        // var.imageURL = response.
+
+        // for(i=0; i < response.length ; i++) {
+        //     var imageUrl = response[i].img;
+        //     $('.allArt').append(`<img src=>`);
+        //     $('.allArt img').attr('src', `${imageUrl}`);
+        // }
+
+        var images = [];
+        for(i=0; i < response.length; i++) {
+            var random = `/graffiti?random=${i}`
+            images.push(`<img src="${response[i].img}${random}">`);
+            // images.push(`<img src="https://loremflickr.com/320/240/graffiti?random=${i}">`);
+        }
+        console.log(images)
+
+        for(i=0; i < images.length ; i++) {
+            var imageAppend = images[i];
+            // var random = `/graffiti?random=${i}`
+            $('.allArt').append(imageAppend);
+        }
+        
+        $('img').on('click', function(){
+            $('img').each(function(){
+            $(this).toggleClass('imgToggle')
+            });
+            $(this).toggleClass('imgToggle')
+        });
+
+        
+
+
+        // var imageUrl = response[2].img;
+        // $('body').append('<img src=>');
+        // $('body img').attr('src', `${imageUrl}`);
+        // },
+    },
+    error: function() {
+        console.log('There was an error getting data from api/art');
+    }
+});
+
+
+

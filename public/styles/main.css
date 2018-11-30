@@ -1,7 +1,37 @@
 * {
     box-sizing: border-box;
+
+}
+body, main {
+    margin: 0;
+    background: #F0F0F0;
+    /* font-family: 'Sedgwick Ave', cursive; */
+    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Rock Salt', cursive;
+}
+section {
+    display: grid;
+    grid-row-gap: 45px;
+    grid-column-gap: 45px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* border: 1px solid black; */
+}
+/* @media to reduce the fr at a min size */
+h1 {
+    background-color: grey;
+}
+img {
+    display: block;
+    box-shadow: -11px 21px 21px rgba(0, 0, 0, .6);
+    width: 100%;
+    /* border: 1px solid black; */
 }
 
-h1 {
-    background-color: green;
+img:hover {
+    opacity: .85;
+    background-color: whitesmoke;
+}
+
+.imgToggle {
+    display: none;
 }
