@@ -53,7 +53,15 @@ app.get('/api/art', function(req, res) {
 });
 
 
-
+app.post('/api/art', (req, res) => {
+    console.log('art create', req.body);
+    var newArt = req.body;
+    db.Art.create(newArt, (err, newArt) => {
+        if(err) return console.log(err);
+        res.json(newArt);
+    })
+    // newArt._id = newBookUUID++;
+});
 
 
 

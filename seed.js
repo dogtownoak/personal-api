@@ -16,8 +16,7 @@ var db = require('./models');
 
 var art_list = [
     {
-        _id: "Test",
-        name: "Test",
+        name: "Dogtown",
         description: "Test",
         img: "Test",
         position: "Test"
