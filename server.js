@@ -44,6 +44,8 @@ app.get('/api/profile', function(req, res) {
     res.json(profile_desc);
 });
 
+
+
 app.get('/api/art', function(req, res) {
     db.Art.find({})
     .exec(function(err, art) {
@@ -52,7 +54,7 @@ app.get('/api/art', function(req, res) {
     });
 });
 
-
+//////// ADD NEW ART ////////////////////////
 app.post('/api/art', (req, res) => {
     console.log('art create', req.body);
     var newArt = req.body;
@@ -60,7 +62,6 @@ app.post('/api/art', (req, res) => {
         if(err) return console.log(err);
         res.json(newArt);
     })
-    // newArt._id = newBookUUID++;
 });
 
 
