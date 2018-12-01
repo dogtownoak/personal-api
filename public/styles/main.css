@@ -8,6 +8,7 @@ body, main {
     /* font-family: 'Sedgwick Ave', cursive; */
     /* font-family: 'Permanent Marker', cursive; */
     font-family: 'Rock Salt', cursive;
+    letter-spacing: .65em;
 }
 section {
     display: grid;
@@ -18,7 +19,10 @@ section {
 }
 /* @media to reduce the fr at a min size */
 h1 {
-    background-color: grey;
+    /* background-color: grey; */
+    font-weight: 400;
+    letter-spacing: .15em;
+    text-align: center;
 }
 img {
     display: block;

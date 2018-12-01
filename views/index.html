@@ -12,13 +12,49 @@
 </head>
 <body>
     <header>
-        <h1>brandon's api</h1>
+        <h1>brandon's local art api</h1>
     </header>
     <main>
         <section class='allArt'>           
         </section>
         <section class='artDetails hidden'>            
         </section>
+
+        <h2>CRUD ART (Create, Find, Update or Delete) </h2>
+        
+                <form>     
+                        <div>       
+                          <label >Create Art:</label><br>
+                          <input type="text" placeholder="Name of Art" oninvalid="setCustomValidity('Please enter your name')">
+                          <input id="img" type="text" placeholder="Image" >
+                          <input type="text" placeholder="Location" oninvalid="setCustomValidity('Please enter the location')">
+                          <input type="text" placeholder="Description" oninvalid="setCustomValidity('Please enter the description')">
+                          <input id="create" type="submit" value="Create">
+                        </div>
+
+                        <div class="find">
+                            <label >Find Art:</label><br>
+                            <input type="text" placeholder="Name of Art" oninvalid="setCustomValidi('Please enter your name')">
+                            <input type="text" placeholder="Location" oninvalid="setCustomValidity('Please enter your name')">
+                            <input type="submit" value="Find">
+                        </div>
+
+                        <div class="update">
+                            <label >Update Art:</label><br>
+                            <input type="text" placeholder="ID of Art to Update" oninvalid="setCustomVali('Please enter youname')">
+                            <input type="text" placeholder="Name of Art" oninvalid="setCustomValidity('Please enter your name')">
+                            <input type="text" placeholder="Image" oninvalid="setCustomValidity('Please enter the image URL')">
+                            <input type="text" placeholder="Location" oninvalid="setCustomValidity('Please enter the location')">
+                            <input type="text" placeholder="Description" oninvalid="setCustomValidity('Please enter the description')">
+                            <input type="submit" value="Update">
+                        </div>
+
+                        <div class="delete">
+                            <label >Delete Art:</label><br>
+                            <input type="text" placeholder="Name of Art" oninvalid="setCustomValidity('Please enter youname')">
+                            <input type="submit" value="Delete">
+                        </div>                     
+                </form>
     </main>
 </body>
 </html>
